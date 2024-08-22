@@ -1,0 +1,31 @@
+If you have multiple github accounts we need to create a configuration files
+for them for example like this
+//account 1
+Host github.com
+    User git
+    HostName github.com
+    IdentityFile ~/.ssh/id_rsa
+//account 2
+Host github.com
+User git
+HostName github.com
+IdentityFile ~/.ssh/id_rsa_200
+//
+so on.. like this
+start evaluating with by starting ssh agent 
+1.eval ($ssh-agent -s)
+after evaluating need to add public key to github.com by cat ~/.ssh/id_rsa
+can generate a ssh key by using the coomand ssh-keygen -t rsa -b 4096 -C "katabathini.bharath2000@gmail.com"
+2.then add ssh key by
+ssh-add ~/.ssh/id_rsa
+3.Test
+ssh -T git@github.com-account_2000
+4.Then you can push 
+
+
+**List of commands**
+ssh-keygen -t rsa -b 4096 -C "youremail.com"
+eval ($ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+ssh -T git@github.com-account_2000
+
